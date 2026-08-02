@@ -546,7 +546,12 @@ a{ color:inherit; }
 /* ═════════════════════════════════════════════════════════════════ BÔNUS */
 .bonus-topo{ display:grid; gap:26px; align-items:center; }
 @media (min-width:920px){ .bonus-topo{ grid-template-columns:1fr 1fr; } }
-.bonus-mock{ width:100%; border-radius:var(--doc); display:block; }
+/* o mockup tem fundo branco: vira um card de documento sobre a seção creme */
+.bonus-mock{
+  width:100%; display:block; background:#fff;
+  border:1px solid var(--linha); border-radius:var(--doc);
+  box-shadow:var(--sombra-doc);
+}
 
 .bonus{ display:grid; gap:24px; margin-top:40px; }
 /* 5 bônus: o principal ocupa a linha inteira e os outros quatro ficam 2 + 2 */
