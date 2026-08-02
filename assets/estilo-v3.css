@@ -404,28 +404,38 @@ a{ color:inherit; }
 .chave svg{ width:32px; height:32px; flex:0 0 auto; color:var(--verde); margin-top:2px; }
 .chave p{ font-size:clamp(17.5px,2vw,20px); line-height:1.55; }
 
-/* ════════════════════════════════════ ANTES E DEPOIS · o dia de hoje x o dia 5 */
-.ad{ display:grid; gap:20px; margin-top:34px; position:relative; }
-@media (min-width:880px){ .ad{ grid-template-columns:1fr 1fr; gap:26px; } }
+/* ════════════════════════════════════ ANTES E DEPOIS · o dia de hoje x o dia 5
+   As duas colunas ficam lado a lado SEMPRE, inclusive no celular: empilhada,
+   a comparação perde o efeito. No mobile a tipografia compacta segura tudo. */
+.ad{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:34px; position:relative; }
+@media (min-width:880px){ .ad{ gap:26px; } }
 .ad-col{ border-radius:var(--doc); overflow:hidden; position:relative; }
 .ad-col--antes{ background:#F7EDEB; border:1px solid #E0BEB7; }
 .ad-col--depois{ background:var(--verde-cl); border:1px solid #A9C4AC; }
-.ad-topo{ padding:15px 22px; display:flex; align-items:center; gap:11px; }
+.ad-topo{ padding:10px 12px; display:flex; align-items:center; gap:7px; }
+@media (min-width:880px){ .ad-topo{ padding:15px 22px; gap:11px; } }
 .ad-col--antes .ad-topo{ background:#9C2E26; color:#fff; }
 .ad-col--depois .ad-topo{ background:var(--verde); color:#fff; }
-.ad-topo svg{ width:22px; height:22px; flex:0 0 auto; }
-.ad-topo b{ font-size:14px; font-weight:800; letter-spacing:.15em; text-transform:uppercase; }
+.ad-topo svg{ width:15px; height:15px; flex:0 0 auto; }
+@media (min-width:880px){ .ad-topo svg{ width:22px; height:22px; } }
+.ad-topo b{ font-size:10.5px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
+@media (min-width:880px){ .ad-topo b{ font-size:14px; letter-spacing:.15em; } }
 .ad-foto{ width:100%; aspect-ratio:16/9; object-fit:cover; }
-.ad-col ul{ padding:8px 22px 22px; }
+.ad-col ul{ padding:2px 12px 14px; }
+@media (min-width:880px){ .ad-col ul{ padding:8px 22px 22px; } }
 .ad-col li{
-  display:flex; gap:15px; align-items:flex-start; padding:15px 0;
-  border-bottom:1px dashed rgba(43,39,36,.14); font-size:17px; line-height:1.48;
+  display:flex; flex-direction:column; gap:3px; padding:10px 0;
+  border-bottom:1px dashed rgba(43,39,36,.14); font-size:13.5px; line-height:1.42;
+}
+@media (min-width:880px){
+  .ad-col li{ flex-direction:row; gap:15px; align-items:flex-start; padding:15px 0; font-size:17px; line-height:1.48; }
 }
 .ad-col li:last-child{ border-bottom:none; }
 .ad-hora{
-  font-family:var(--serif); font-weight:900; font-size:12.5px; letter-spacing:.05em;
-  flex:0 0 80px; padding-top:3px; text-transform:uppercase;
+  font-family:var(--serif); font-weight:900; font-size:10.5px; letter-spacing:.05em;
+  text-transform:uppercase;
 }
+@media (min-width:880px){ .ad-hora{ font-size:12.5px; flex:0 0 80px; padding-top:3px; } }
 .ad-col--antes .ad-hora{ color:#9C2E26; }
 .ad-col--depois .ad-hora{ color:var(--verde); }
 /* a seta que liga as duas colunas, só onde há duas colunas */
