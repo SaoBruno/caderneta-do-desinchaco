@@ -37,18 +37,9 @@
 <script>window.pixelId = "6a6f68b7c20a812abc480ab4";</script>
 <script src="https://cdn.utmify.com.br/scripts/pixel/pixel.js" async defer></script>
 
-<!-- =========================================================================
-     PIXEL DA META · descomente e troque SEU_PIXEL_ID
-     ==========================================================================
-<script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init','SEU_PIXEL_ID'); fbq('track','PageView');
-</script>
-     ========================================================================= -->
+<!-- Não há pixel da Meta aqui de propósito: quem envia os eventos de conversão
+     para a Meta é a própria Utmify, pela API de conversões. Se um dia quiser o
+     pixel nativo na página, o bloco antigo está no histórico do git. -->
 </head>
 <body>
 
@@ -1083,14 +1074,6 @@ fbq('init','SEU_PIXEL_ID'); fbq('track','PageView');
     if (barra) barra.style.width = Math.round((restam / TOTAL_VAGAS) * 100) + '%';
   });
 
-  /* ---- eventos do pixel ---- */
-  document.querySelectorAll('[data-cta]').forEach(function(a){
-    a.addEventListener('click', function(){
-      if (typeof fbq === 'function') {
-        fbq('track', 'InitiateCheckout', { content_name: 'Caderneta do Desinchaco', value: 27.00, currency: 'BRL' });
-      }
-    });
-  });
 })();
 </script>
 
