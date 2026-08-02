@@ -407,7 +407,7 @@ a{ color:inherit; }
 /* ════════════════════════════════════ ANTES E DEPOIS · o dia de hoje x o dia 5
    As duas colunas ficam lado a lado SEMPRE, inclusive no celular: empilhada,
    a comparação perde o efeito. No mobile a tipografia compacta segura tudo. */
-.ad{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:34px; position:relative; }
+.ad{ display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:34px; position:relative; }
 @media (min-width:880px){ .ad{ gap:26px; } }
 .ad-col{ border-radius:var(--doc); overflow:hidden; position:relative; }
 .ad-col--antes{ background:#F7EDEB; border:1px solid #E0BEB7; }
@@ -438,14 +438,19 @@ a{ color:inherit; }
 @media (min-width:880px){ .ad-hora{ font-size:12.5px; flex:0 0 80px; padding-top:3px; } }
 .ad-col--antes .ad-hora{ color:#9C2E26; }
 .ad-col--depois .ad-hora{ color:var(--verde); }
-/* a seta que liga as duas colunas, só onde há duas colunas */
-.ad-seta{ display:none; }
+/* a seta que liga as duas colunas: no celular ela fica menor e sobre as
+   fotos (onde não cobre texto); no desktop, centralizada como antes */
+.ad-seta{
+  display:flex; align-items:center; justify-content:center;
+  position:absolute; left:50%; top:88px; transform:translate(-50%,-50%);
+  width:38px; height:38px; border-radius:50%; background:var(--verde-viv); color:#fff;
+  box-shadow:0 6px 16px rgba(33,101,58,.38); border:3px solid var(--creme-3); z-index:4;
+}
+.ad-seta svg{ width:17px; height:17px; }
 @media (min-width:880px){
   .ad-seta{
-    display:flex; align-items:center; justify-content:center;
-    position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
-    width:62px; height:62px; border-radius:50%; background:var(--verde-viv); color:#fff;
-    box-shadow:0 8px 22px rgba(33,101,58,.4); border:4px solid var(--creme); z-index:4;
+    top:50%; width:62px; height:62px;
+    border:4px solid var(--creme); box-shadow:0 8px 22px rgba(33,101,58,.4);
   }
   .ad-seta svg{ width:27px; height:27px; }
 }
