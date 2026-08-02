@@ -691,6 +691,8 @@ fbq('init','SEU_PIXEL_ID'); fbq('track','PageView');
     <h2 class="t2" style="color:#fff;margin-bottom:30px;text-align:center">Por apenas</h2>
 
     <div class="preco">
+      <img class="preco-mock" src="assets/img/gerar/mockup-principal.jpg"
+           alt="A Caderneta do Desinchaço impressa, aberta e no celular" loading="lazy">
       <p class="preco-de">De <s>R$ 247,00</s> por</p>
       <div class="preco-valor"><sup>R$</sup>27<span class="cent">,00</span></div>
       <p class="preco-parc">à vista no <b>Pix</b> ou em <b>6x de R$ 5,07</b> no cartão</p>
@@ -1033,16 +1035,6 @@ fbq('init','SEU_PIXEL_ID'); fbq('track','PageView');
 </footer>
 
 
-<!-- ═════════════════════════════════════════════════════ BARRA FIXA DE COMPRA -->
-<div class="sticky" id="sticky" aria-hidden="true">
-  <div class="sticky-preco">
-    <s>R$ 247,00</s>
-    <b>R$ 27,00</b>
-  </div>
-  <a class="btn" href="LINK-DO-CHECKOUT" data-cta="sticky">QUERO AGORA</a>
-</div>
-
-
 <script>
 (function(){
   'use strict';
@@ -1061,27 +1053,6 @@ fbq('init','SEU_PIXEL_ID'); fbq('track','PageView');
   } else {
     alvos.forEach(function(el){ el.classList.add('vis'); });
   }
-
-  /* ---- barra fixa: aparece depois do hero, some no rodapé ---- */
-  var barra = document.getElementById('sticky');
-  var rodape = document.querySelector('.rodape');
-  var gatilho = document.querySelector('.hero');
-
-  function atualiza(){
-    var passouHero = window.scrollY > (gatilho.offsetHeight * 0.85);
-    var noRodape = rodape.getBoundingClientRect().top < window.innerHeight * 0.75;
-    var mostrar = passouHero && !noRodape;
-    barra.classList.toggle('on', mostrar);
-    barra.setAttribute('aria-hidden', mostrar ? 'false' : 'true');
-  }
-
-  var travado = false;
-  window.addEventListener('scroll', function(){
-    if (travado) return;
-    travado = true;
-    requestAnimationFrame(function(){ atualiza(); travado = false; });
-  }, { passive: true });
-  atualiza();
 
   /* ---- vagas do preço de lançamento ----
      TROQUE o número abaixo pelo total REAL de vendas confirmadas na

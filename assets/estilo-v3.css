@@ -666,6 +666,9 @@ a{ color:inherit; }
   text-align:center; box-shadow:0 26px 62px rgba(0,0,0,.34); border-top:5px solid var(--terracota);
   position:relative;
 }
+.preco-mock{
+  width:min(340px,86%); margin:0 auto 20px; display:block; border-radius:8px;
+}
 .preco-de{ font-size:17px; color:var(--cinza); }
 .preco-valor{
   font-family:var(--serif); font-weight:900; line-height:1; color:var(--grafite);
@@ -790,7 +793,7 @@ a{ color:inherit; }
 .faq-corpo{ padding:0 24px 24px; font-size:17px; line-height:1.6; color:var(--cinza); }
 
 /* ════════════════════════════════════════════════════════════════ RODAPÉ */
-.rodape{ background:var(--grafite); color:#A79C91; padding:54px 20px 130px; font-size:14.5px; line-height:1.65; }
+.rodape{ background:var(--grafite); color:#A79C91; padding:54px 20px 64px; font-size:14.5px; line-height:1.65; }
 .rodape .wrap{ max-width:820px; text-align:center; }
 .rodape a{ color:#C6BCAE; text-decoration:underline; text-underline-offset:3px; }
 .rodape-marca{ font-family:var(--serif); font-weight:900; font-size:18px; color:#EFE8DC; margin-bottom:6px; }
