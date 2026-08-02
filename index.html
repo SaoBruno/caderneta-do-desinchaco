@@ -113,14 +113,25 @@ fbq('init','SEU_PIXEL_ID'); fbq('track','PageView');
       </a>
     </div>
 
-    <!-- Mockup fotográfico gerado no Higgsfield (nano banana pro).
-         A reconstrução da capa em HTML/CSS segue disponível no estilo-v3.css
-         caso queira voltar. -->
-    <div class="mock-foto">
-      <img src="assets/img/gerar/mockup-principal.jpg"
-           alt="A Caderneta do Desinchaço impressa, aberta e no celular"
-           fetchpriority="high">
-      <div class="mock-badge"><b>28</b>páginas</div>
+    <!-- A capa real do produto, remontada em HTML e CSS.
+         O mockup fotográfico do Higgsfield está em
+         assets/img/gerar/mockup-principal.jpg caso queira testar de novo. -->
+    <div class="mock">
+      <div class="mock-inner">
+        <div class="capa">
+          <img class="capa-foto" src="assets/img/foto/01-capa.jpg" alt="Jarra de água com pepino e hortelã, abacaxi, mamão, limão e fita métrica sobre a bancada">
+          <span class="capa-pill">100% natural · 5 dias</span>
+          <div class="capa-corpo">
+            <svg viewBox="0 0 100 100"><use href="#i-gota"></use></svg>
+            <div class="capa-titulo">CADERNETA<br>DO DESINCHAÇO</div>
+            <div class="capa-risco"></div>
+            <p class="capa-sub">A rotina natural de 5 dias para desinchar de verdade, sem passar fome e sem gastar com produto caro.</p>
+            <p class="capa-autor">Elaborada por <b>Nutri Nay Santos</b></p>
+          </div>
+          <div class="capa-rodape">Inchaço de água · Inchaço de gás · Intestino preso</div>
+        </div>
+        <div class="mock-badge"><b>28</b>páginas</div>
+      </div>
     </div>
 
   </div>
