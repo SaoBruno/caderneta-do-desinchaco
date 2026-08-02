@@ -98,19 +98,6 @@ fbq('init','SEU_PIXEL_ID'); fbq('track','PageView');
         <li><span class="cx"><svg><use href="#i-risco"></use></svg></span><span>O quadro dos 5 dias para marcar com caneta e não desistir</span></li>
       </ul>
 
-      <!-- =====================================================================
-           O template MAXXIMA não tem botão de compra no bloco 1. O primeiro
-           botão do template aparece só no bloco 9, depois da ancoragem.
-           Por isso aqui vai uma âncora, não um botão de preço.
-
-           Se você quiser testar o botão de compra direto no topo, troque este
-           bloco por:
-           <a class="btn" href="LINK-DO-CHECKOUT" data-cta="hero">QUERO MINHA CADERNETA POR R$ 27</a>
-           ===================================================================== -->
-      <a class="link-desce" href="#dentro">
-        Ver o que tem dentro da caderneta
-        <svg><use href="#i-seta-b"></use></svg>
-      </a>
     </div>
 
     <!-- A capa real do produto, remontada em HTML e CSS.
@@ -132,6 +119,20 @@ fbq('init','SEU_PIXEL_ID'); fbq('track','PageView');
         </div>
         <div class="mock-badge"><b>28</b>páginas</div>
       </div>
+    </div>
+
+    <!-- =====================================================================
+         O template MAXXIMA não tem botão de compra no bloco 1: o primeiro
+         botão aparece só no bloco 9. Por isso aqui vai uma âncora. No celular
+         ela fica DEPOIS da capa (ordem: texto, capa, âncora), via grid-area.
+         Para testar botão de compra no topo, troque por:
+         <a class="btn" href="LINK-DO-CHECKOUT" data-cta="hero">QUERO MINHA CADERNETA POR R$ 27</a>
+         ===================================================================== -->
+    <div class="hero-cta">
+      <a class="link-desce" href="#dentro">
+        Ver o que tem dentro da caderneta
+        <svg><use href="#i-seta-b"></use></svg>
+      </a>
     </div>
 
   </div>
@@ -161,27 +162,18 @@ fbq('init','SEU_PIXEL_ID'); fbq('track','PageView');
 <!-- ═══════════════════════════════════════════════════ BLOCO 3 · RUMINAÇÃO -->
 <section class="bl bl--areia">
   <div class="wrap rev">
-    <span class="olho">Se você chegou até aqui</span>
+    <div style="max-width:760px">
+      <h2 class="t2">Você não aguenta mais acordar inchada e ver a barriga crescer ao longo do dia.</h2>
+      <p class="lead" style="margin:18px 0 26px">Por isso, quase todo dia, você pensa:</p>
+    </div>
 
-    <div class="rumina-grid">
-      <div class="rumina-foto">
-        <span class="fita fita--tl"></span>
-        <img src="assets/img/foto/17-fechamento.jpg" alt="Xícara de chá e a caderneta sobre a mesa da cozinha, no fim do dia" loading="lazy">
-      </div>
-
-      <div>
-        <h2 class="t2">Você não aguenta mais acordar inchada e ver a barriga crescer ao longo do dia.</h2>
-        <p class="lead" style="margin:18px 0 26px">Por isso, quase todo dia, você pensa:</p>
-
-        <div class="bilhetes">
-          <div class="bilhete">Eu como pouco e mesmo assim estufo.</div>
-          <div class="bilhete">A calça que fechou ontem hoje não fecha.</div>
-          <div class="bilhete">Fica a marca da meia na minha perna todo fim de tarde.</div>
-          <div class="bilhete">O anel não sai do dedo quando eu acordo.</div>
-          <div class="bilhete">Depois do almoço parece que engoli uma bola.</div>
-          <div class="bilhete">Já cortei doce, já cortei pão, e nada muda.</div>
-        </div>
-      </div>
+    <div class="bilhetes">
+      <div class="bilhete">Eu como pouco e mesmo assim estufo.</div>
+      <div class="bilhete">A calça que fechou ontem hoje não fecha.</div>
+      <div class="bilhete">Fica a marca da meia na minha perna todo fim de tarde.</div>
+      <div class="bilhete">O anel não sai do dedo quando eu acordo.</div>
+      <div class="bilhete">Depois do almoço parece que engoli uma bola.</div>
+      <div class="bilhete">Já cortei doce, já cortei pão, e nada muda.</div>
     </div>
 
     <div class="eusei">
@@ -357,7 +349,7 @@ fbq('init','SEU_PIXEL_ID'); fbq('track','PageView');
       </li>
       <li>
         <div class="passos-img">
-          <img src="assets/img/foto/17-fechamento.jpg" alt="Mão marcando a caderneta com caneta" loading="lazy">
+          <img src="assets/img/foto/23-caderneta-aberta.jpg" alt="Caderneta aberta com o quadro do dia sendo marcado a caneta" loading="lazy">
           <span class="passos-n">3</span>
         </div>
         <h3>Marque o quadro do dia</h3>
@@ -562,7 +554,7 @@ fbq('init','SEU_PIXEL_ID'); fbq('track','PageView');
           nada a mais. E nenhum deles repete o que já está dentro das 28 páginas.
         </p>
       </div>
-      <img class="bonus-mock" src="assets/img/gerar/bonus-mockup.jpg"
+      <img class="bonus-mock" src="assets/img/gerar/bonus-mockup.png"
            alt="Os 5 guias bônus da Caderneta do Desinchaço" loading="lazy">
     </div>
 

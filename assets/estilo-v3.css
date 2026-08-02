@@ -234,8 +234,24 @@ a{ color:inherit; }
   position:relative; overflow:hidden;
   background:linear-gradient(178deg, #FFFDF8 0%, var(--creme) 55%, var(--creme-2) 100%);
 }
-.hero-grid{ max-width:var(--max); margin:0 auto; display:grid; gap:clamp(30px,4.4vw,54px); align-items:center; }
-@media (min-width:920px){ .hero-grid{ grid-template-columns:1.04fr .96fr; } }
+/* no celular a ordem é: texto, capa, âncora. No desktop a âncora volta
+   para a coluna do texto e a capa ocupa a coluna direita inteira. */
+.hero-grid{
+  max-width:var(--max); margin:0 auto; display:grid;
+  gap:clamp(26px,4.4vw,54px); align-items:center;
+  grid-template-areas:"txt" "mock" "cta";
+}
+.hero-grid > div:first-child{ grid-area:txt; }
+.hero-grid .mock{ grid-area:mock; }
+.hero-cta{ grid-area:cta; }
+@media (min-width:920px){
+  .hero-grid{
+    grid-template-columns:1.04fr .96fr;
+    grid-template-areas:"txt mock" "cta mock";
+    row-gap:6px;
+  }
+  .hero-cta{ align-self:start; }
+}
 
 .hero-selo{
   display:inline-flex; align-items:center; gap:9px; margin-bottom:20px;
@@ -334,6 +350,7 @@ a{ color:inherit; }
 /* ══════════════════════════════════════════════ RUMINAÇÃO · bilhetes colados */
 .bilhetes{ display:grid; gap:16px; margin-top:8px; }
 @media (min-width:760px){ .bilhetes{ grid-template-columns:1fr 1fr; gap:20px 26px; } }
+@media (min-width:1080px){ .bilhetes{ grid-template-columns:1fr 1fr 1fr; } }
 .bilhete{
   background:#FFFDF8; border:1px solid var(--linha); border-radius:var(--doc);
   padding:21px 24px 21px 23px; position:relative;
@@ -546,12 +563,8 @@ a{ color:inherit; }
 /* ═════════════════════════════════════════════════════════════════ BÔNUS */
 .bonus-topo{ display:grid; gap:26px; align-items:center; }
 @media (min-width:920px){ .bonus-topo{ grid-template-columns:1fr 1fr; } }
-/* o mockup tem fundo branco: vira um card de documento sobre a seção creme */
-.bonus-mock{
-  width:100%; display:block; background:#fff;
-  border:1px solid var(--linha); border-radius:var(--doc);
-  box-shadow:var(--sombra-doc);
-}
+/* mockup em PNG transparente: senta direto no fundo creme da seção */
+.bonus-mock{ width:100%; display:block; filter:drop-shadow(0 18px 30px rgba(43,39,36,.16)); }
 
 .bonus{ display:grid; gap:24px; margin-top:40px; }
 /* 5 bônus: o principal ocupa a linha inteira e os outros quatro ficam 2 + 2 */
